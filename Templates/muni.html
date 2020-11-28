@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% block content %}
+<table border="1" cellpadding="5" cellspacing="5">
+    {% for i in emp%}
+     <td>Name</td>
+        <td>Age</td>
+    <tr>
+      <td>{{i.name}}</td>
+        <td>{{i.age}}</td>
+    </tr>
+    {%endfor%}
+    </table>
+{% endblock %}
+
