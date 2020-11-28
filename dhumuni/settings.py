@@ -83,6 +83,7 @@ DATABASES = {
         'PASSWORD': 'Mana$hema11',
         'HOST': 'muniyappan.postgres.database.azure.com',
         'PORT': '5432',
+        'sslmode':'true',
     }
 }
 
@@ -122,7 +123,6 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
-os.environ.get('muniyappan')
 STATIC_URL = '/static/'
 STATICFILES_DIRS=[
 os.path.join(BASE_DIR,'static')
