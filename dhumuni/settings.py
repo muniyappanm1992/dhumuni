@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'rest_framework',
+    'import_export',
 ]
 
 MIDDLEWARE = [
@@ -70,23 +71,54 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'dhumuni.wsgi.application'
-
-
 # Database
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
+# if os.getenv('GAE_APPLICATION', None):
+#     # Running on production App Engine, so connect to Google Cloud SQL using
+#     # the unix socket at /cloudsql/<your-cloudsql-connection string>
+#  DATABASES = {
+#         'default': {
+#             'ENGINE':'django.db.backends.mysql',
+#             'HOST': '/cloudsql/webapp-297104:asia-south1:website-dhumuni',
+#              'NAME': 'websitedb',
+#             'USER': 'dhumuni',
+#             'PASSWORD':'Mana$hema11',
+#         }
+#     }
+# else:
+#      # DATABASES = {
+#      #    'default': {
+#      #        'ENGINE': 'django.db.backends.sqlite3',
+#      #        'NAME': BASE_DIR / 'db.sqlite3',
+#      #    }
+#      # }
+# #     # Running locally so connect to either a local MySQL instance or connect to
+# #     # Cloud SQL via the proxy. To start the proxy via command line:
+# #     #
+# #     #     $ cloud_sql_proxy -instances=[INSTANCE_CONNECTION_NAME]=tcp:3306
+# #     #
+# #     # See https://cloud.google.com/sql/docs/mysql-connect-proxy
+#     DATABASES = {
+#         'default': {
+#             'ENGINE': 'django.db.backends.mysql',
+#             'HOST': '127.0.0.1',
+#             'PORT': '3306',
+#             'USER': 'dhumuni',
+#             'PASSWORD': 'Mana$hema11',
+#             'NAME': 'websitedb',
+#         }
+#     }
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'muniyappandb',
-        'USER': 'muniyappan@muniyappan',
-        'PASSWORD': 'Mana$hema11',
-        'HOST': 'muniyappan.postgres.database.azure.com',
-        'PORT': '5432',
-        'sslmode':'true',
-    }
+        'default': {
+            'ENGINE': 'django.db.backends.mysql',
+            'HOST': '127.0.0.1',
+            'PORT': '3306',
+            'USER': 'root',
+            'PASSWORD': 'Mana$hema11',
+            'NAME': 'test',
+        }
 }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/3.1/ref/settings/#auth-password-validators
@@ -120,7 +152,7 @@ USE_L10N = True
 
 USE_TZ = True
 
-
+os.environ.get('monisha')
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 STATIC_URL = '/static/'
